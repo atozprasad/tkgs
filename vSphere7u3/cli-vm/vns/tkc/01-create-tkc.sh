@@ -1,11 +1,12 @@
 #!/bin/bash
 clear
+source ./tkc.env
 source ../vns.env
 kubectl vsphere login --server https://${SUPERVISOR_CLUSTER_IP} --insecure-skip-tls-verify  -u ${VS_NS_USER}
 kubectl config use-context ${VS_NAMESPACE} 
 
 ## Login as VSN_ADMIN
-source tkc-cluster.conf
+source ./templates/tkc-cluster.conf
 rm -f ./generated/create-tkc.yaml ./generated/temp.yaml
 ( echo "cat <<EOF >./generated/create-tkc.yaml";
   cat ./templates/create-tkc.yaml.template;
