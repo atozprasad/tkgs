@@ -20,7 +20,7 @@ read -p "Next ..."
 clear
 
 
-figlet "List resources"
+figlet "List storageclass"
 kubectl get storageclass
 read -p "Next ..."
 clear

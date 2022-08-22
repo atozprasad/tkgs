@@ -20,4 +20,11 @@ spec:
       tkr:
         reference:
           name: ${WN_NP1_TKR}
-          #v1.21.2---vmware.1-tkg.1.ee25d55
+  settings:
+   network:
+     cni:
+       name: antrea
+     services:
+       cidrBlocks: ["10.96.0.0/23"]
+     pods:
+       cidrBlocks: ["192.0.5.0/16"]
